@@ -1,0 +1,26 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Manta-Epitech-Academy/workshop-metadata-tools/main/metadata.schema.json
+schema_version: "1.2"
+
+project:
+  name: "Your Workshop"
+  slug: "your-workshop"
+  summary: "Describe your workshop in one line."
+  entrypoint: "WORKSHOP.md"
+
+runtime:
+  engine: "TIC-80"
+  language: "python"
+
+documents:
+  - path: "WORKSHOP.md"
+
+toc:
+  - document: WORKSHOP.md
+    sections:
+      - title: My workshop
+        cf_code: []
+        parts:
+          - title: Getting started
+            cf_code: []
+          - title: Next steps
+            cf_code: []

@@ -1,0 +1,93 @@
+Changelog — business logic (since 2026-04-14, ~one week)
+=======================================================
+
+Scope: behavioural rules, validation, metadata model, CI, and workshop
+authoring flow. Commit hashes refer to Manta-Epitech-Academy repositories
+example_compentency_framework_subject (template) and workshop-metadata-tools
+(tools), as of 2026-04-21.
+
+
+1. Metadata and table of contents
+----------------------------------
+• Single manifest metadata.yaml describes the workshop (project, runtime,
+  documents, toc, optional observables). Paths are relative to the metadata file.
+
+• Multi-document toc: each outlined .md file has { document, sections }; legacy
+  flat toc under project.entrypoint remains supported (schema 1.2).
+
+• documents[] lists workshop .md files with optional depends_on prerequisites.
+
+• TOC structure is derived from Markdown ATX headings (# …); fenced code blocks
+  are ignored for headings.
+
+• check_toc.py verifies that toc section trees match headings on disk and that
+  cf_code entries match the DOMAIN-SKILL.LEVEL.OBS_NUM pattern and reference
+  declared observables when observables are present.
+
+• sync_metadata_toc.py rebuilds toc from documents (or entrypoint) and can
+  merge existing cf_code by matching title paths; creates a default metadata.yaml
+  when missing (auxiliary .md names like README.md / structure.md / obs.md can
+  be skipped for defaults).
+
+
+2. Observables and competency codes (2026-04-16)
+------------------------------------------------
+• observables[] in metadata: id (slug.n), title, observation.
+
+• cf_code on toc nodes references observables via the numeric suffix tied to
+  slug (validation in check_toc).
+
+
+3. Split: template vs tools repo (2026-04-21)
+---------------------------------------------
+• Workshop repositories no longer ship Python scripts; tooling lives only in
+  workshop-metadata-tools.
+
+• CI checks out the tools repo and runs sync_metadata_toc.py, generate_readme.py,
+  check_toc.py via a reusable workflow; generated files must match the commit
+  (metadata.yaml, README.md).
+
+• JSON Schema for metadata is canonical in workshop-metadata-tools; workshops
+  reference it via $schema URL. Optional local metadata.schema.json in a workshop
+  overrides the bundled schema for sync validation.
+
+
+4. README generation
+--------------------
+• README.md is generated from metadata.yaml (project, authors, runtime, documents
+  table with links, toc outline, observables list). CI enforces that it stays in
+  sync.
+
+• Template-specific instructions moved to TEMPLATE.md so README can be fully
+  generated.
+
+
+5. Quizzes in Markdown (2026-04-21)
+----------------------------------
+• Quiz blocks start with > QUIZ.<level>.<q_id> title, then > question lines.
+
+• Types: single (- A. …), multiple (* A. …), match (- A. … / - a. …), free form
+  as a single line - [prompt]: (prompt text in brackets; JSON field freeform_prompt).
+
+• Quizzes are stripped before heading extraction so they never appear in toc /
+  metadata.yaml.
+
+• parse_quiz.py exports quizzes as JSON for downstream use.
+
+• Breaking change: free form no longer allows unstructured prose after the
+  question; only the - [prompt]: line (f07cc0a on tools).
+
+
+6. Documentation layout
+-----------------------
+• Long-form STRUCTURE guide and diagram HTML gallery live under
+  workshop-metadata-tools/docs/; the template repo no longer duplicates
+  metadata.schema.json or structure.md files.
+
+
+Notes
+-----
+• “Made-with: Cursor” appears in many commit bodies; omitted from behavioural
+  bullets above.
+
+• For exact file-level diffs, use: git log --since=2026-04-14 --oneline

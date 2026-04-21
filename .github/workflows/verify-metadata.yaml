@@ -1,0 +1,10 @@
+name: Verify metadata
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  verify:
+    uses: Manta-Epitech-Academy/workshop-metadata-tools/.github/workflows/verify-metadata-reusable.yml@main
