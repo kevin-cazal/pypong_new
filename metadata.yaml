@@ -26,12 +26,7 @@ toc:
             parts:
               - title: Quelques explications
             competency:
-              - domain: PROG
-                skill: '01'
-                level: A1
-                project: pypong
-                obs_index: 1
-                observable_id: pypong.1
+              - /PROG/01/A1/pypong/1
   - document: pypong.md
     sections:
       - title: Créer votre mini jeu
@@ -40,101 +35,41 @@ toc:
             parts:
               - title: 'Exercice 1 : Faites bouger le pad dans l’autre direction'
                 competency:
-                  - domain: PROG
-                    skill: '02'
-                    level: A1
-                    project: pypong
-                    obs_index: 1
-                    observable_id: pypong.2
+                  - /PROG/02/A1/pypong/2
               - title: 'Exercice 2 : Limitez les mouvement du pad'
                 competency:
-                  - domain: PROG
-                    skill: '03'
-                    level: A1
-                    project: pypong
-                    obs_index: 1
-                    observable_id: pypong.3
+                  - /PROG/03/A1/pypong/3
           - title: Créer la balle rebondissante
             parts:
               - title: 'Exercice 1 : Dessinez  la balle'
                 competency:
-                  - domain: PROG
-                    skill: '04'
-                    level: A1
-                    project: pypong
-                    obs_index: 1
-                    observable_id: pypong.4
+                  - /PROG/04/A1/pypong/4
               - title: 'Exercice 2 : Faire bouger la balle'
                 competency:
-                  - domain: PROG
-                    skill: '05'
-                    level: A1
-                    project: pypong
-                    obs_index: 1
-                    observable_id: pypong.5
+                  - /PROG/05/A1/pypong/5
               - title: 'Exercice 3 : Faire rebondir la balle'
                 competency:
-                  - domain: PROG
-                    skill: '03'
-                    level: A2
-                    project: pypong
-                    obs_index: 1
-                    observable_id: pypong.6
+                  - /PROG/03/A2/pypong/6
           - title: Gérer le respawn et la collision avec le pad
             parts:
               - title: 'Exercice 1 : Respawn'
                 competency:
-                  - domain: PROG
-                    skill: '03'
-                    level: A2
-                    project: pypong
-                    obs_index: 1
-                    observable_id: pypong.7
+                  - /PROG/03/A2/pypong/7
               - title: 'Exercice 2 : gérer la collision avec le pad'
           - title: Ajouter une interface
             parts:
               - title: 'Exercice 1 : le score'
                 competency:
-                  - domain: PROG
-                    skill: '05'
-                    level: A1
-                    project: pypong
-                    obs_index: 1
-                    observable_id: pypong.8
-                  - domain: PROG
-                    skill: '03'
-                    level: A1
-                    project: pypong
-                    obs_index: 1
-                    observable_id: pypong.9
+                  - /PROG/05/A1/pypong/8
+                  - /PROG/03/A1/pypong/9
               - title: 'Exercice 2 : Life & game over'
           - title: Pour aller plus loin
             competency:
-              - domain: PROG
-                skill: '08'
-                level: A2
-                project: pypong
-                obs_index: 1
-                observable_id: pypong.10
+              - /PROG/08/A2/pypong/10
         competency:
-          - domain: PROG
-            skill: '09'
-            level: A2
-            project: pypong
-            obs_index: 1
-            observable_id: pypong.11
-          - domain: TRANS
-            skill: '01'
-            level: A1
-            project: pypong
-            obs_index: 12
-            observable_id: pypong.12
-          - domain: TRANS
-            skill: '02'
-            level: A1
-            project: pypong
-            obs_index: 13
-            observable_id: pypong.13
+          - /PROG/09/A2/pypong/11
+          - /TRANS/01/A1/pypong/12
+          - /TRANS/02/A1/pypong/13
       - title: Crédits
 observables:
   - id: pypong.1

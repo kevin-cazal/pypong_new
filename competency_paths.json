@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "notation": "Canonical competency observable path (slash). Maps legacy workshop cf_code.",
+  "notation": "Canonical competency observable path (slash). Keys align with metadata.yaml competency hooks (cf_code / resolve).",
   "by_cf_code": {
     "PROG-01.A1.1": "PROG/01/A1/pypong/1",
     "PROG-02.A1.2": "PROG/02/A1/pypong/1",
